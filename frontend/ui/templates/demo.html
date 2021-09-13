@@ -1,0 +1,38 @@
+{{ define "demo.layout" }}
+
+{{ template "navbar" . }}
+{{ template "demo.content" . }}
+{{ template "footer" . }}
+
+{{ end }}
+
+{{ define "demo.content" }}
+<hr>
+<div class="container ml-lg-5 align-items-center">
+
+    {{ range .Properties }}
+    <div class="row mb-lg-3">
+
+        <div class="col-lg-4">
+            <div class="card border-light shadow-sm" style="width:18rem;">
+                <img style="height: 250px; width: content-box; align-content: center" src="/assets/img/{{ .Image }}" class="card-img-top" />
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <h3>{{ .Name }}</h3>
+            <p> Housing Description: {{ .Description}}</p>
+            <p> Price {{ .Price }} ETB</p>
+            <h5>Rating: <b>{{ .Rating }}</b>/5</h5>
+            <a href="/detail?id={{ .ID }}" class="card-link">Click for Details</a>
+        </div>
+    </div>
+    {{else}}
+        <h2>No Items Found</h2>
+
+    {{ end }}
+
+    <p style="display:none;" id="userid">{{ .UserID }}</p>
+
+</div>
+{{ end }}
+
