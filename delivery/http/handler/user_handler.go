@@ -417,7 +417,7 @@ func (uh *UserHandler) Signup(w http.ResponseWriter, r *http.Request) {
 		hostURL := "smtp.gmail.com"
 		hostPort := "587"
 		emailSender := "jermayah7@gmail.com"
-		password := "ba23atalwarad"
+		password := "u^from@xk"
 		emailReceiver := user.Email
 
 		emailAuth := smtp.PlainAuth(
